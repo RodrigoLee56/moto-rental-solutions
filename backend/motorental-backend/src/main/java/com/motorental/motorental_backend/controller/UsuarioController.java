@@ -16,9 +16,13 @@ import com.motorental.motorental_backend.dto.UsuarioDTO;
 import com.motorental.motorental_backend.model.Usuario;
 import com.motorental.motorental_backend.service.UsuarioService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequestMapping("/api/usuarios")
+@RequiredArgsConstructor
 public class UsuarioController {
+
 	@Autowired
 	private UsuarioService usuarioService;
 
@@ -45,13 +49,13 @@ public class UsuarioController {
 		}
 		return ResponseEntity.ok(updatedUsuario);
 	}
-	
+
 	@DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUsuario(@PathVariable Long id) {
-        boolean deleted = usuarioService.deleteById(id);
-        if (!deleted) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.noContent().build();
-    }
+	public ResponseEntity<Void> deleteUsuario(@PathVariable Long id) {
+		boolean deleted = usuarioService.deleteById(id);
+		if (!deleted) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.noContent().build();
+	}
 }

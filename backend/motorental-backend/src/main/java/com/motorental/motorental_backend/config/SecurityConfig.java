@@ -16,9 +16,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.motorental.motorental_backend.security.CustomUserDetailsService;
 import com.motorental.motorental_backend.security.JwtFilter;
 
+import lombok.RequiredArgsConstructor;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+
 	@Autowired
 	private JwtFilter jwtFilter;
 

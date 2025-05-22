@@ -17,8 +17,11 @@ import com.motorental.motorental_backend.security.CustomUserDetailsService;
 import com.motorental.motorental_backend.security.JwtUtil;
 import com.motorental.motorental_backend.service.UsuarioService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequestMapping("/api/auth")
+@RequiredArgsConstructor
 public class AuthController {
 
 	@Autowired
